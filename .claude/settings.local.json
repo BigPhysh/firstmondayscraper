@@ -10,7 +10,12 @@
       "Bash(do echo \"=== $folder ===\")",
       "Bash(done)",
       "Bash(git init)",
-      "Bash(git add -A)"
+      "Bash(git add -A)",
+      "Bash(git commit -m \"$(cat <<''EOF''\nComplete First Monday scraper with YYYYMMDD folder format\n\nMajor features:\n- Full corpus scraper for First Monday journal (1996-2025)\n- Successfully scraped 353 issues with 2,710 articles\n- 100% full text extraction success rate\n- YYYYMMDD date format for folder organization\n\nComponents added:\n- scraper_by_issue.py: Main scraper with issue-based organization\n- scraper.py: Original article-based scraper\n- scrape_all.py: Non-interactive batch scraper\n- config.py: Configuration settings\n- rename_date_folders.py: Utility to convert existing folders to YYYYMMDD\n- rename_volume_folders.py: Utility to convert volume-formatted folders\n- analyze_scraping_results.py: Analysis and reporting tool\n- test_date_parsing.py: Date parsing validation\n\nDocumentation:\n- README.md: Project overview and setup\n- USAGE_GUIDE.md: How to use the scraper\n- SCRAPING_RESULTS_REPORT.md: Detailed analysis of scraping results\n- UPDATE_NOTES.md: YYYYMMDD format migration notes\n- SCRAPING_STATUS.md: Status tracking\n- TESTING_RESULTS.md: Testing documentation\n- CLAUDE.md: Project requirements and site analysis\n\nResults:\n- 353 issues organized in folders\n- 2,710 articles with complete metadata\n- 2,710 full text files (100% success)\n- 336 issues in YYYYMMDD format\n- 17 issues need manual folder renaming\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
+      "Bash(git add .gitignore)",
+      "Bash(git commit --amend --no-edit)",
+      "Bash(git remote add origin https://github.com/BigPhysh/firstmondayscraper.git)",
+      "Bash(git push -u origin master)"
     ],
     "deny": [],
     "ask": []

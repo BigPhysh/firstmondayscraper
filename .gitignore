@@ -1,6 +1,10 @@
 # Project-specific: Data directories (too large for git)
 Data/
 data/
+# Note: Data folder contains:
+#   - metadata/: Article metadata JSON files
+#   - Full Text/: Article full text files
+#   - combined/: Combined metadata + full text JSON (derived data)
 
 # Project-specific: Checkpoint files
 checkpoint.json
