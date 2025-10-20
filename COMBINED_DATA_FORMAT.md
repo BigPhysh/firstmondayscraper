@@ -2,12 +2,12 @@
 
 ## Overview
 
-The `Data/combined/` directory contains unified JSON files that combine metadata and full text for each article. This format makes it easier to work with the corpus for analysis, machine learning, or text processing.
+The `Data/articles/` directory contains unified JSON files that combine metadata and full text for each article. This format makes it easier to work with the corpus for analysis, machine learning, or text processing.
 
 ## Directory Structure
 
 ```
-Data/combined/
+Data/articles/
 ├── 19960506/                    # Issue folder (YYYYMMDD format)
 │   ├── issue_info.json         # Issue metadata
 │   ├── 464_Editors' Introduction.json
@@ -81,7 +81,7 @@ Each article JSON file contains:
 ```python
 import json
 
-with open('Data/combined/19960506/464_Editors\' Introduction.json', 'r', encoding='utf-8') as f:
+with open('Data/articles/19960506/464_Editors\' Introduction.json', 'r', encoding='utf-8') as f:
     article = json.load(f)
 
 print(f"Title: {article['title']}")
@@ -96,7 +96,7 @@ print(f"\nFirst 200 characters:\n{article['full_text'][:200]}")
 import json
 from pathlib import Path
 
-issue_dir = Path('Data/combined/19960506')
+issue_dir = Path('Data/articles/19960506')
 
 # Get all article files (excluding issue_info.json)
 article_files = [f for f in issue_dir.glob('*.json')
@@ -116,10 +116,10 @@ print(f"Loaded {len(articles)} articles from issue")
 import json
 from pathlib import Path
 
-combined_dir = Path('Data/combined')
+articles_dir = Path('Data/articles')
 all_articles = []
 
-for issue_dir in combined_dir.iterdir():
+for issue_dir in articles_dir.iterdir():
     if not issue_dir.is_dir():
         continue
 
@@ -140,10 +140,10 @@ import json
 import pandas as pd
 from pathlib import Path
 
-combined_dir = Path('Data/combined')
+articles_dir = Path('Data/articles')
 articles = []
 
-for issue_dir in combined_dir.iterdir():
+for issue_dir in articles_dir.iterdir():
     if not issue_dir.is_dir():
         continue
 
@@ -191,7 +191,7 @@ python combine_metadata_fulltext.py
 This will:
 1. Read metadata from `Data/metadata/`
 2. Read full text from `Data/Full Text/`
-3. Combine them into `Data/combined/`
+3. Combine them into `Data/articles/`
 4. Process all 353 issues and 2,710 articles
 
 ## File Naming Convention
@@ -209,7 +209,7 @@ Example: `464_Editors' Introduction.json`
 - Full text includes all content from the article HTML
 - Word count is calculated from full text
 - Some older articles may have incomplete metadata
-- The `combined/` directory is excluded from git (too large)
+- The `articles/` directory is excluded from git (too large)
 
 ---
 

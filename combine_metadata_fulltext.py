@@ -42,7 +42,7 @@ def process_all_articles():
 
     metadata_dir = Path("Data/metadata")
     fulltext_dir = Path("Data/Full Text")
-    output_dir = Path("Data/combined")
+    output_dir = Path("Data/articles")
 
     # Create output directory
     output_dir.mkdir(exist_ok=True)
@@ -168,7 +168,7 @@ def main():
     print("  - All metadata fields (title, authors, abstract, etc.)")
     print("  - full_text field with complete article text")
     print("  - word_count field")
-    print("\nOutput location: Data/combined/[issue-folder]/")
+    print("\nOutput location: Data/articles/[issue-folder]/")
 
     response = input("\nProceed? (y/n): ").strip().lower()
 

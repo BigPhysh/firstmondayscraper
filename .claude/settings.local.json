@@ -15,7 +15,10 @@
       "Bash(git add .gitignore)",
       "Bash(git commit --amend --no-edit)",
       "Bash(git remote add origin https://github.com/BigPhysh/firstmondayscraper.git)",
-      "Bash(git push -u origin master)"
+      "Bash(git push -u origin master)",
+      "Bash(git commit -m \"$(cat <<''EOF''\nAdd combined metadata+fulltext JSON format\n\nNew Features:\n- combine_metadata_fulltext.py: Script to merge metadata and full text\n- COMBINED_DATA_FORMAT.md: Documentation with usage examples\n- Data/combined/: New directory with 2,710 unified JSON files\n\nChanges:\n- Successfully combined all 2,710 articles (100% success rate)\n- Each JSON contains metadata fields + full_text field\n- Organized by issue folders (353 issues total)\n- Updated .gitignore to document Data/ structure\n\nBenefits:\n- Single JSON file per article (easier to work with)\n- Ready for pandas, ML models, text analysis\n- Python usage examples included in documentation\n- No data loss - all metadata and full text preserved\n\nExample structure:\n{\n  \"article_id\": \"464\",\n  \"title\": \"...\",\n  \"authors\": [...],\n  \"keywords\": [...],\n  \"word_count\": 404,\n  \"full_text\": \"...\"\n}\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
+      "Bash(git push)",
+      "Bash(rd /s /q \"Data\\combined\")"
     ],
     "deny": [],
     "ask": []
